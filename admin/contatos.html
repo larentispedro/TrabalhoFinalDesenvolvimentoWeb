@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Painel Administrativo - Contatos</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    .sidebar {
+      width: 230px;
+      height: 100vh;
+      background: #1e1e1e;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 20px;
+      border-right: 1px solid #333;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px;
+      margin-bottom: 8px;
+      color: #cfcfcf;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .sidebar a:hover {
+      background: #2c2c2c;
+      color: #fff;
+    }
+
+    .sidebar-title {
+      font-size: 22px;
+      color: #4dabff;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #4dabff;
+      margin-bottom: 25px;
+    }
+
+    table {
+      color: #e0e0e0 !important;
+      background: #1b1b1b !important;
+    }
+
+    thead {
+      background: #263238 !important;
+      color: #90caf9 !important;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #333;
+    }
+
+    tbody tr:hover {
+      background: #2c2c2c;
+    }
+
+    .btn-danger {
+      background: #c62828;
+      border: none;
+    }
+
+    .btn-danger:hover {
+      background: #e53935;
+    }
+  </style>
+</head>
+
+<body onload="carregarContatos()">
+
+  <!-- MENU LATERAL -->
+  <div class="sidebar">
+
+    <div class="sidebar-title">
+      <i class="fa-solid fa-gear me-2"></i> Painel Admin
+    </div>
+
+    <a href="dashboard.html"><i class="fa-solid fa-chart-line me-2"></i> Dashboard</a>
+
+    <a href="contatos.html" style="background:#2c2c2c; color:#fff;">
+      <i class="fa-solid fa-envelope me-2"></i> Contatos Recebidos
+    </a>
+
+    <a href="orcamentos.html"><i class="fa-solid fa-file-invoice-dollar me-2"></i> Orçamentos</a>
+
+    <a href="../index.html" class="mt-4"><i class="fa-solid fa-arrow-left me-2"></i> Voltar ao site</a>
+
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="content">
+
+    <h1>Contatos Recebidos</h1>
+
+    <table class="table table-dark table-hover align-middle">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Mensagem</th>
+          <th>Data</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabela-contatos"></tbody>
+    </table>
+
+  </div>
+
+  <script>
+    async function carregarContatos() {
+      let resposta = await fetch("../back-php/contato-listar.php");
+      let dados = await resposta.json();
+
+      let tabela = document.getElementById("tabela-contatos");
+      tabela.innerHTML = "";
+
+      for (let c of dados) {
+        tabela.innerHTML += `
+          <tr>
+            <td>${c.id}</td>
+            <td>${c.nome}</td>
+            <td>${c.email}</td>
+            <td>${c.mensagem}</td>
+            <td>${c.data_envio ?? "-"}</td>
+
+            <td>
+              <button class="btn btn-danger btn-sm" onclick="excluirContato(${c.id})">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
+          </tr>`;
+      }
+    }
+
+    async function excluirContato(id) {
+      if (!confirm("Tem certeza que deseja excluir este contato?")) return;
+
+      let resposta = await fetch(`../back-php/contato-excluir.php?id=${id}`);
+      let r = await resposta.text();
+
+      alert("Contato excluído.");
+      carregarContatos();
+    }
+  </script>
+
+</body>
+
+</html>
