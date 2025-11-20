@@ -78,3 +78,26 @@ async function excluirContato(id) {
     alert("ERRO: " + texto);
   }
 }
+
+function aplicarMascaraTelefone(input) {
+    let v = input.value.replace(/\D/g, "");
+
+    if (v.length > 11) v = v.slice(0, 11);
+
+    if (v.length > 10) {
+        // (49) 99836-8786
+        v = v.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+    } else if (v.length > 6) {
+        // (49) 9983-6789
+        v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
+    } else if (v.length > 2) {
+        // (49) 9983
+        v = v.replace(/(\d{2})(\d{0,5})/, "($1) $2");
+    } else {
+        // (49
+        v = v.replace(/(\d{0,2})/, "($1");
+    }
+
+    input.value = v;
+}
+
