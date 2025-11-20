@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Orçamentos</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body onload="carregarOrcamentos()">
+
+  <div class="container py-5">
+
+    <h1 class="mb-4">Todos os Orçamentos Recebidos</h1>
+
+    <table class="table table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Serviço</th>
+          <th>Data Desejada</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabela-orcamentos">
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <script>
+    async function carregarOrcamentos() {
+      let resposta = await fetch("./back-php/orcamentos-listar.php");
+      let dados = await resposta.json();
+
+      let corpo = "";
+      for (let o of dados) {
+        corpo += `
+          <tr>
+            <td>${o.id}</td>
+            <td>${o.nome}</td>
+            <td>${o.email}</td>
+            <td>${o.telefone ?? "-"}</td>
+            <td>${o.servico}</td>
+            <td>${o.data_desejada ?? "-"}</td>
+            <td>${o.observacoes ?? ""}</td>
+          </tr>
+        `;
+      }
+
+      document.getElementById("tabela-orcamentos").innerHTML = corpo;
+    }
+  </script>
+
+</body>
+
+</html>
