@@ -2,7 +2,6 @@
 # 📊 F&P Contábil — Sistema Web com Painel Administrativo  
 Projeto desenvolvido para a disciplina **Fundamentos ao Desenvolvimento Web**, utilizando HTML, CSS, JavaScript e PHP com integração ao MySQL.
 
----
 
 ## 📌 Objetivo do Projeto
 Criar um site institucional para um escritório de contabilidade com:
@@ -17,7 +16,6 @@ Criar um site institucional para um escritório de contabilidade com:
 
 Este projeto **implementa 100% dos requisitos da atividade A1.3**.
 
----
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -30,7 +28,6 @@ Este projeto **implementa 100% dos requisitos da atividade A1.3**.
 - **XAMPP**
 - **Font Awesome Icons**
 
----
 
 ## 📁 Estrutura de Pastas
 
@@ -65,10 +62,6 @@ TrabalhoFinalDesenvolvimentoWeb/
 ├── style.css
 └── README.md
 
-yaml
-Copiar código
-
----
 
 ## 🧩 Funcionalidades Principais
 
@@ -79,7 +72,7 @@ Copiar código
 - Exibição no painel admin → **admin/contatos.php**  
 - Possibilidade de excluir registros  
 
----
+
 
 ### 🧾 **2. Solicitação de Orçamentos**
 Cada serviço tem seu próprio modal de orçamento:
@@ -106,7 +99,6 @@ Listagem completa disponível em:
 👉 `admin/orcamentos.php`  
 Com opção de excluir registros.
 
----
 
 ### 🖥 **3. Painel Administrativo (Tema Dark)**  
 O painel inclui:
@@ -118,7 +110,7 @@ O painel inclui:
 ✔ Exclusão de registros  
 ✔ Dashboard com números gerais (opcional)  
 
----
+
 
 ## 🗄 Banco de Dados
 
@@ -126,8 +118,6 @@ O banco está no arquivo:
 
 database/fp_contabil.sql
 
-yaml
-Copiar código
 
 ### Ele contém:
 
@@ -136,26 +126,13 @@ Copiar código
 - Estrutura + AUTO_INCREMENT
 - Charset UTF-8
 
----
-
-## 📥 Como Importar o Banco (Instruções para o Professor)
-
-1. Acesse **phpMyAdmin**  
-2. Clique em **Importar**  
-3. Escolha o arquivo:  
-   `/database/fp_contabil.sql`  
-4. Confirmar importação  
-5. O banco ficará pronto com todas as tabelas necessárias
-
----
 
 ## ▶️ Como Rodar o Projeto no XAMPP
 
 1. Copie a pasta **TrabalhoFinalDesenvolvimentoWeb** para:
 C:\xampp\htdocs\
 
-markdown
-Copiar código
+
 2. Inicie:
 - Apache
 - MySQL
@@ -163,16 +140,10 @@ Copiar código
 3. Acesse no navegador:
 http://localhost/TrabalhoFinalDesenvolvimentoWeb/index.html
 
-markdown
-Copiar código
 
 4. Painel admin:
-http://localhost/TrabalhoFinalDesenvolvimentoWeb/admin/dashboard.php
+http://localhost/TrabalhoFinalDesenvolvimentoWeb/admin/dashboard.html
 
-yaml
-Copiar código
-
----
 
 ## 📸 Prints do Sistema (adicione depois)
 
@@ -183,7 +154,6 @@ Copiar código
 - Painel admin contatos  
 - Painel admin orçamentos  
 
----
 
 ## 👨‍💻 Autor
 **Pedro Larentis**  
@@ -191,7 +161,6 @@ Curso: *Sistemas de Informação*
 Disciplina: *Fundamentos ao Desenvolvimento Web*  
 Instituição: **UNOESC**  
 
----
 
 ## ✔ Requisitos da Avaliação A1.3 — Atendidos
 
@@ -206,9 +175,7 @@ Instituição: **UNOESC**
 - [x] Painel administrativo (extra)  
 - [x] Exclusão de registros (extra)  
 - [x] Máscara de telefone (extra)  
-- [x] Tema escuro no admin (extra)
 
----
 
 ## 🎉 Conclusão
 
