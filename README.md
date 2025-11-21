@@ -29,40 +29,6 @@ Este projeto **implementa 100% dos requisitos da atividade A1.3**.
 - **Font Awesome Icons**
 
 
-## 📁 Estrutura de Pastas
-
-TrabalhoFinalDesenvolvimentoWeb/
-│
-├── admin/
-│ ├── dashboard.php
-│ ├── contatos.php
-│ ├── orcamentos.php
-│
-├── back-php/
-│ ├── conexao.php
-│ ├── contato-inserir.php
-│ ├── contato-listar.php
-│ ├── contato-excluir.php
-│ ├── orcamento-inserir.php
-│ ├── orcamentos-listar.php
-│ ├── orcamento-excluir.php
-│
-├── js/
-│ └── formularios.js
-│
-├── servicos/
-│ ├── servico1.html
-│ ├── servico2.html
-│ ├── servico3.html
-│
-├── database/
-│ └── fp_contabil.sql ← arquivo exportado do phpMyAdmin
-│
-├── index.html
-├── style.css
-└── README.md
-
-
 ## 🧩 Funcionalidades Principais
 
 ### 📬 **1. Envio de Contato**
