@@ -14,8 +14,6 @@ Criar um site institucional para um escritório de contabilidade com:
 ✔ Estrutura organizada em pastas  
 ✔ Banco exportado (.sql) conforme solicitado na prova
 
-Este projeto **implementa 100% dos requisitos da atividade A1.3**.
-
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -66,11 +64,10 @@ Listagem completa disponível em:
 Com opção de excluir registros.
 
 
-### 🖥 **3. Painel Administrativo (Tema Dark)**  
+### 🖥 **3. Painel Administrativo 
 O painel inclui:
 
-✔ Sidebar fixa  
-✔ Tema escuro  
+✔ Sidebar fixa   
 ✔ Tabelas dinâmicas  
 ✔ Botões com ícones  
 ✔ Exclusão de registros  
@@ -110,15 +107,7 @@ http://localhost/TrabalhoFinalDesenvolvimentoWeb/index.html
 4. Painel admin:
 http://localhost/TrabalhoFinalDesenvolvimentoWeb/admin/dashboard.html
 
-
-## 📸 Prints do Sistema (adicione depois)
-
-> Você deve adicionar aqui algumas imagens do site:  
-- Página inicial  
-- Formulário de contato  
-- Modal de orçamento  
-- Painel admin contatos  
-- Painel admin orçamentos  
+Também pode ser acessado pelo botão "painel administrativo" no final da página principal.
 
 
 ## 👨‍💻 Autor
@@ -128,22 +117,4 @@ Disciplina: *Fundamentos ao Desenvolvimento Web*
 Instituição: **UNOESC**  
 
 
-## ✔ Requisitos da Avaliação A1.3 — Atendidos
-
-- [x] Criar site institucional  
-- [x] Criar duas seções → **Contato** e **Orçamento**  
-- [x] Criar tabelas no MySQL  
-- [x] Implementar INSERT via PHP  
-- [x] Implementar listagem dos dados  
-- [x] Exibir tudo em páginas HTML próprias  
-- [x] Exportar banco `.sql`  
-- [x] Organização de arquivos  
-- [x] Painel administrativo (extra)  
-- [x] Exclusão de registros (extra)  
-- [x] Máscara de telefone (extra)  
-
-
-## 🎉 Conclusão
-
-Este projeto apresenta um sistema completo, funcional e organizado, cumprindo integralmente os requisitos da prova e incluindo funcionalidades adicionais que enriquecem a entrega, como painel administrativo, tema dark e controles extras.
 
