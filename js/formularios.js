@@ -1,7 +1,7 @@
 async function enviarContato(event) {
   event.preventDefault();
 
-  // Pegando dados manualmente com getElementById
+  
   let nome = document.getElementById("contato-nome").value;
   let email = document.getElementById("contato-email").value;
   let mensagem = document.getElementById("contato-mensagem").value;
@@ -29,7 +29,7 @@ async function enviarContato(event) {
 async function enviarOrcamento(event, servico) {
   event.preventDefault();
 
-  // Pegando dados manualmente com getElementById
+
   let nome = document.getElementById("orc-nome").value;
   let email = document.getElementById("orc-email").value;
   let telefone = document.getElementById("orc-telefone").value;
